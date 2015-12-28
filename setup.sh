@@ -190,18 +190,11 @@ checkForError
 
 cd $STRONGSWAN_TMP/src
 ./configure --prefix=/usr --sysconfdir=/etc \
-  --enable-eap-radius \
-  --enable-eap-mschapv2 \
-  --enable-eap-identity \
-  --enable-eap-md5 \
-  --enable-eap-mschapv2 \
-  --enable-eap-tls \
-  --enable-eap-ttls \
-  --enable-eap-peap \
-  --enable-eap-tnc \
-  --enable-eap-dynamic \
-  --enable-xauth-eap \
-  --enable-openssl
+--with-ipsec-script=strongswan --enable-eap-identity --enable-eap-md5 \
+--enable-eap-mschapv2 --enable-eap-tls --enable-eap-ttls --enable-eap-peap  \
+--enable-eap-tnc --enable-eap-dynamic --enable-eap-radius --enable-xauth-eap  \
+--enable-xauth-pam  --enable-dhcp  --enable-openssl  --enable-addrblock --enable-unity  \
+--enable-certexpire --enable-radattr --enable-openssl --disable-gmp --enable-kernel-libipsec
 checkForError
 
 make
